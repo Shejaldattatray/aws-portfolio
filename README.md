@@ -1,21 +1,22 @@
-# 🚀 AWS S3 Static Website Hosting with CloudFront
+# Containerization and Deployment of Portfolio Website using Docker and AWS EC2
 
 ## 📌 Project Overview
 
-This project demonstrates the deployment of a static portfolio website using Amazon Web Services (AWS). The website is hosted on Amazon S3 and distributed globally through Amazon CloudFront to provide secure, scalable, and high-performance content delivery.
+This project demonstrates the containerization and deployment of a static portfolio website using Docker and Amazon EC2. The website is packaged into a Docker container and deployed on a cloud-based virtual machine hosted on AWS.
 
-The objective of this project was to gain hands-on experience with cloud-based website hosting, content delivery networks (CDNs), and deployment workflows using AWS services.
+The project also implements Continuous Integration and Continuous Deployment (CI/CD) using GitHub Actions, enabling automated deployment whenever changes are pushed to the GitHub repository.
 
 ---
 
 ## 🎯 Project Objectives
 
-* Host a static website using Amazon S3
-* Configure static website hosting
-* Deploy content through Amazon CloudFront
-* Enable secure HTTPS access
-* Learn cloud deployment best practices
-* Understand content delivery and caching mechanisms
+* Containerize a web application using Docker
+* Create and manage Docker images and containers
+* Deploy containerized applications on AWS EC2
+* Configure a Linux-based cloud server
+* Implement CI/CD using GitHub Actions
+* Automate deployment using shell scripting
+* Gain hands-on experience with DevOps practices
 
 ---
 
@@ -23,74 +24,85 @@ The objective of this project was to gain hands-on experience with cloud-based w
 
 * HTML5
 * CSS3
+* Docker
+* Docker Hub
+* AWS EC2
+* Ubuntu Linux
 * Git & GitHub
-* Amazon S3
-* Amazon CloudFront
-* AWS Management Console
+* GitHub Actions
+* Nginx
 
 ---
 
 ## ✨ Features
 
-* Responsive portfolio website
-* Static website hosting using S3
-* Global content delivery via CloudFront
-* HTTPS-secured website access
-* Fast loading performance
-* Scalable cloud infrastructure
+* Containerized portfolio website
+* Docker-based deployment
+* AWS EC2 cloud hosting
+* Automated deployment using GitHub Actions
+* Shell script deployment automation
+* Linux server management
 * Version-controlled deployment workflow
+* Continuous Integration and Continuous Deployment (CI/CD)
 
 ---
 
 ## 🏗 Architecture
 
-```text
-User Browser
-      │
-      ▼
-CloudFront Distribution
-      │
-      ▼
-Amazon S3 Bucket
-      │
-      ▼
-Portfolio Website Files
-```
+Developer
+│
+▼
+GitHub Repository
+│
+▼
+GitHub Actions (CI/CD)
+│
+▼
+AWS EC2 Instance
+│
+▼
+Docker Container (Nginx)
+│
+▼
+Portfolio Website
 
 ---
 
 ## ⚙️ Implementation Steps
 
-### 1. Portfolio Website Development
+### 1. Portfolio Website Preparation
 
 * Developed a static portfolio website using HTML and CSS.
-* Organized project structure and assets.
+* Organized project files and assets.
 
-### 2. GitHub Repository Setup
+### 2. Docker Containerization
 
-* Created a GitHub repository.
-* Uploaded website source code.
-* Managed updates using Git version control.
+* Created a Dockerfile for the application.
+* Built Docker images locally.
+* Tested application execution inside Docker containers.
 
-### 3. Amazon S3 Configuration
+### 3. AWS EC2 Setup
 
-* Created an S3 bucket.
-* Enabled Static Website Hosting.
-* Uploaded website files.
-* Configured bucket permissions and access policies.
+* Launched an Ubuntu EC2 instance.
+* Configured security groups for HTTP access.
+* Connected to the instance using SSH.
 
-### 4. CloudFront Integration
+### 4. Docker Deployment on EC2
 
-* Created a CloudFront Distribution.
-* Connected CloudFront with the S3 bucket.
-* Enabled HTTPS support.
-* Configured content caching and delivery settings.
+* Installed Docker on the EC2 instance.
+* Cloned the GitHub repository.
+* Built and deployed the Docker container.
 
-### 5. Testing & Deployment
+### 5. Deployment Automation
 
-* Verified website accessibility.
-* Tested content delivery through CloudFront.
-* Confirmed successful deployment.
+* Created a deployment script (`deploy.sh`).
+* Automated Docker build and container restart process.
+
+### 6. CI/CD Integration
+
+* Configured GitHub Actions workflow.
+* Enabled automatic deployment on every push to the main branch.
+* Verified successful end-to-end deployment.
 
 ---
 
@@ -98,46 +110,54 @@ Portfolio Website Files
 
 Through this project, I gained practical experience in:
 
-* AWS S3 Static Website Hosting
-* CloudFront CDN Configuration
-* Cloud Deployment Workflow
-* HTTPS Content Delivery
-* Cloud Storage Management
-* GitHub Integration
-* Cloud Infrastructure Basics
+* Docker Images and Containers
+* Dockerfile Creation
+* AWS EC2 Deployment
+* Linux Server Administration
+* SSH Connectivity
+* Git and GitHub Workflow
+* Shell Script Automation
+* CI/CD using GitHub Actions
+* Cloud-based Application Deployment
+* DevOps Fundamentals
 
 ---
 
 ## 📂 Project Structure
 
-```text
 portfolio-website/
 │
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+├── Dockerfile
+├── deploy.sh
 ├── index.html
-├── style.css
+├── styles.css
 ├── assets/
 │
 └── README.md
-```
 
 ---
 
-## 🔗 Live Demo
-
-### Website
-
-https://d2j86j77wvfibw.cloudfront.net/
+## 🔗 Deployment
 
 ### GitHub Repository
 
 https://github.com/Shejaldattatray/aws-portfolio
 
+### Live Website
+
+http://13.232.144.203
+
+---
 
 ## 👨‍💻 Author
 
-**Shejal Jambhale**
+Shejal Jambhale
 
-Cloud Computing & DevOps Enthusiast
+Cloud Computing & DevOps Intern
 
 MIT Art, Design and Technology University
 
@@ -145,9 +165,10 @@ MIT Art, Design and Technology University
 
 ## ⭐ Future Enhancements
 
+* HTTPS Configuration using SSL/TLS
 * Custom Domain Integration
-* Route 53 Configuration
-* CI/CD Deployment Pipeline
-* AWS Certificate Manager (ACM)
-* Automated Deployment using GitHub Actions
-* Monitoring with AWS CloudWatch
+* Docker Compose for Multi-Container Applications
+* Monitoring using Prometheus and Grafana
+* Infrastructure as Code (Terraform)
+* Container Orchestration using Kubernetes
+
